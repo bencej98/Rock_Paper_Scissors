@@ -1,6 +1,6 @@
 
  // Create rock paper scissors variables in an array
-    const choices = ["Rock", "Paper", "Scissors"];
+    const choices = ["rock", "paper", "scissors"];
 
 // Returns random choice from the array for the computer
     function getComputerChoice (choices) {
@@ -16,6 +16,7 @@
  // Computer should choose one from the array
  // Player should choose one as by typing it(?)
 
+    let playerSelection = prompt("Please enter rock paper or scissors: ").toLowerCase();
 
  // After this compare the two values
  // Give one point to the winner of the round (increment their score variable)
