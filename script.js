@@ -4,13 +4,13 @@
 
 
 // Returns random choice from the array for the computer
-    function random (choices) {
+    function getComputerChoice (choices) {
         return Math.floor(Math.random() * choices.length)
     }
     let randomChoice = random(choices);
+    console.log(choices[randomChoice]);
 
  // Create score variables
-    let score;
  // Store them in an array
  // Computer should choose one from the array
  // Player should choose one as by typing it(?)
