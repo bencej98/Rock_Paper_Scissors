@@ -1,12 +1,16 @@
 
  // Create rock paper scissors variables in an array
     const choices = ["Rock", "Paper", "Scissors"];
+
+
+// Returns random choice from the array for the computer
     function random (choices) {
         return Math.floor(Math.random() * choices.length)
     }
     let randomChoice = random(choices);
-    console.log(randomChoice, choices[randomChoice]);
+
  // Create score variables
+    let score;
  // Store them in an array
  // Computer should choose one from the array
  // Player should choose one as by typing it(?)
