@@ -4,12 +4,14 @@
 
 // Returns random choice from the array for the computer
     function getComputerChoice (choices) {
-        randomChoice = Math.floor(Math.random() * choices.length);
-        computerSelection = choices[randomChoice];
+        let randomChoice = Math.floor(Math.random() * choices.length);
+        let computerSelection = choices[randomChoice];
         return computerSelection;
     }
     
+    let computerSelection = getComputerChoice(choices);
 
+    console.log(computerSelection);
 
  // Create score variables
  // Store them in an array
