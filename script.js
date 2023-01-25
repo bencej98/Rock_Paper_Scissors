@@ -47,6 +47,15 @@ function playRound(playerSelection, computerSelection) {
 
 console.log(playRound(playerSelection, computerSelection));
 
-    
+function game() {
+    let playerScore;
+    let computerScore;
+    let result;
+
+    while (playerScore < 5 || computerScore < 5) {
+        result = playRound(playerSelection, computerSelection);
+        
+    }
+}
  // Give one point to the winner of the round (increment their score variable)
  // Play rounds until one of them reaches 5 points
