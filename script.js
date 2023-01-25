@@ -1,4 +1,8 @@
 
+     let playerSelection = prompt("Please enter rock paper or scissors: ").toLowerCase();
+
+     console.log(playerSelection);
+     
  // Create rock paper scissors variables in an array
     const choices = ["rock", "paper", "scissors"];
 
@@ -17,10 +21,6 @@
  // Store them in an array
  // Computer should choose one from the array
  // Player should choose one as by typing it(?)
-
-    let playerSelection = prompt("Please enter rock paper or scissors: ").toLowerCase();
-
-    console.log(playerSelection);
     
  // After this compare the two values
 
