@@ -20,6 +20,28 @@
 
     let playerSelection = prompt("Please enter rock paper or scissors: ").toLowerCase();
 
+    console.log(playerSelection);
+    
  // After this compare the two values
+
+    function winnerDecider(playerSelection, computerSelection) {
+        if (playerSelection === "rock" && computerSelection === "rock" || playerSelection === "paper" && computerSelection === "paper" || playerSelection === "scissors" && computerSelection === "scissors") {
+            alert("It's a tie!");
+        } else if (playerSelection === "rock" && computerSelection === "paper") {
+            alert("You lose! Paper beats Rock");
+        } else if (playerSelection === "rock" && computerSelection === "scissors") {
+            alert("You win! Rock beats Scissors");
+        } else if (playerSelection === "paper" && computerSelection === "rock") {
+            alert("You win! Paper beats Rock");
+        } else if (playerSelection === "paper" && computerSelection === "scissors")  {
+            alert("You lose! Scissors beats Paper")
+        } else if(playerSelection === "scissors" && computerSelection === "rock") {
+            alert("You lose! Rock beats Scissors")
+        } else if(playerSelection === "scissors" && computerSelection === "paper") {
+            alert("You win! Scissors beats Paper")
+        }
+    }
+
+    winnerDecider(playerSelection, computerSelection);
  // Give one point to the winner of the round (increment their score variable)
  // Play rounds until one of them reaches 5 points
