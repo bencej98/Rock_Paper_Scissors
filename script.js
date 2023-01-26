@@ -2,23 +2,6 @@
 // Create rock paper scissors variables in an array
 const choices = ["rock", "paper", "scissors"];
 
-// Returns random choice from the array for the computer
-function getComputerChoice (choices) {
-    let randomChoice = Math.floor(Math.random() * choices.length);
-    let computerSelection = choices[randomChoice];
-    return computerSelection;
-}
-
-let computerSelection = getComputerChoice(choices);
-
-console.log(computerSelection);
-
-// Create score variables
-// Store them in an array
-// Computer should choose one from the array
-// Player should choose one as by typing it(?)
-
-// After this compare the two values
 
 function game() {
     function playRound(playerSelection, computerSelection) {
@@ -46,22 +29,15 @@ function game() {
             return "win";
         }
     }
-    
-    let playerScore;
-    let computerScore;
-    let result;
 
-    for (let i = 0; i < 5; i++) {
-        result = playRound(playerSelection, computerSelection);
-        if (result === "win") {
-            playerScore++;
-        }
-        else if (result === "loose") {
-            computerScore++;
-        }
-        console.log(result);
+    function getComputerChoice (choices) {
+        let randomChoice = Math.floor(Math.random() * choices.length);
+        let computerSelection = choices[randomChoice];
+        return computerSelection;
     }
+    
 }
+
 
 game();
  // Give one point to the winner of the round (increment their score variable)
