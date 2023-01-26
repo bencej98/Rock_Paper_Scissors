@@ -51,7 +51,7 @@ function game() {
     let computerScore;
     let result;
 
-    while (playerScore < 5 || computerScore < 5) {
+    for (let i = 0; i < 5; i++) {
         result = playRound(playerSelection, computerSelection);
         if (result === "win") {
             playerScore++;
