@@ -35,7 +35,12 @@ function game() {
         let computerSelection = choices[randomChoice];
         return computerSelection;
     }
-    
+    let playerScore = 0;
+    let computerScore = 0;
+    let result;
+    let playerSelection;
+
+
 }
 
 
