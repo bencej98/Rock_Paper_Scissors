@@ -4,8 +4,10 @@ const choices = ["rock", "paper", "scissors"];
 
 
 function game() {
+    // This function plays a round based on the selection of the player and the computer
     function playRound(playerSelection, computerSelection) {
 
+        // With these if else block the function decides the winner (from the player POV) based on the input
         if (playerSelection === "rock" && computerSelection === "rock" || playerSelection === "paper" && computerSelection === "paper" || playerSelection === "scissors" && computerSelection === "scissors") {
             alert("It's a tie!");
             return "tie";
@@ -30,17 +32,35 @@ function game() {
         }
     }
 
+    // This function randomly select a choice for the computer
     function getComputerChoice (choices) {
+        // Randomly gets a number based on the length of the choices array
         let randomChoice = Math.floor(Math.random() * choices.length);
+        // Gets the given choise based on the random number from they choices array
         let computerSelection = choices[randomChoice];
         return computerSelection;
     }
+
     let playerScore = 0;
     let computerScore = 0;
     let result;
     let playerSelection;
 
-
+    // This while loop goes on until one of the scores reaches 5 points
+    while (computerScore != 5 && playerScore != 5) {
+        // This is the players selection forced to lowercase
+        playerSelection = prompt("Please enter rock paper or scissors: ").toLowerCase();
+        let computerSelection = getComputerChoice(choices);
+        // Gets the result and based on that assigns a point
+        result = playRound(playerSelection, computerSelection);
+        if (result === "win") {
+            playerScore++;
+            
+        }
+        else if (result === "loose") {
+            computerScore++;
+        }
+    }
 }
 
 
