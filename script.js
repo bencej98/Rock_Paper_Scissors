@@ -63,6 +63,12 @@ function game() {
             computerScore++;
         }
     }
+
+    if (playerScore == 5) {
+        alert("You have won the game!Congrats! :)")
+    } else if(computerScore == 5) {
+        alert("Unfortunately you have lost the game! :(")
+    }
 }
 
 
