@@ -8,7 +8,9 @@ function game() {
     function playRound(playerSelection, computerSelection) {
 
         // With these if else block the function decides the winner (from the player POV) based on the input
-        if (playerSelection === "rock" && computerSelection === "rock" || playerSelection === "paper" && computerSelection === "paper" || playerSelection === "scissors" && computerSelection === "scissors") {
+        if (playerSelection === "rock" && computerSelection === "rock" ||
+            playerSelection === "paper" && computerSelection === "paper" || 
+            playerSelection === "scissors" && computerSelection === "scissors") {
             alert("It's a tie!");
             return "tie";
         } else if (playerSelection === "rock" && computerSelection === "paper") {
