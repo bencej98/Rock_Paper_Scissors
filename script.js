@@ -6,7 +6,9 @@ const choices = ["rock", "paper", "scissors"];
 function game() {
     // This function plays a round based on the selection of the player and the computer
     function playRound(playerSelection, computerSelection) {
-
+        const rockButton = document.querySelector(".rock");
+        const paperButton = document.querySelector(".paper");
+        const scissorsButton = document.querySelector(".scissors");
         // With these if else block the function decides the winner (from the player POV) based on the input
         if (playerSelection === "rock" && computerSelection === "rock" ||
             playerSelection === "paper" && computerSelection === "paper" || 
@@ -64,6 +66,7 @@ function game() {
         }
     }
 
+    // Displays the result for the player
     if (playerScore == 5) {
         alert("You have won the game!Congrats! :)")
     } else if(computerScore == 5) {
