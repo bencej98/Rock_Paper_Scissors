@@ -8,29 +8,13 @@ const scissorsButton = document.querySelector(".scissors");
 
 
 function getPlayerSelection () {
-    /*
-    window.onclick = function(e) {
-        let choice = console.log(e.srcElement.className);
-        return choice; // then e.srcElement.className has the class
-    }
-    */
     rockButton.addEventListener('click', (event) => {
-        let choice = console.log(event.target.className);
+        let choice = event.target.className;
         return choice; // then e.srcElement.className has the class
    });
 
-    paperButton.addEventListener('click', (event) => {
-        let choice = console.log(event.target.className);
-        return choice; // then e.srcElement.className has the class
-    });
-
-    scissorsButton.addEventListener('click', (event) => {
-        let choice = console.log(event.target.className);
-        return choice; // then e.srcElement.className has the class
-    });
 }
 
-getPlayerSelection();
 
 
 
