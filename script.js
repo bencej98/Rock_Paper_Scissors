@@ -6,8 +6,10 @@ const paperButton = document.querySelector(".paper");
 const scissorsButton = document.querySelector(".scissors");
 
 
-
+// This functions return which button was clicked
 function getPlayerSelection () {
+
+    // The eventlisteners check for click event and return the class of the clicked button
 
     rockButton.addEventListener('click', (event) => {
         let choice = event.target.className;
