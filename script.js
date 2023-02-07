@@ -6,8 +6,18 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {        
         // This function plays a round based on the selection of the player and the computer
-        function playRound(playerSelection, computerSelection) {
+        const playerSelection = e.target.className;
 
+        // This function randomly select a choice for the computer
+        function getComputerChoice (choices) {
+            // Randomly gets a number based on the length of the choices array
+            let randomChoice = Math.floor(Math.random() * choices.length);
+            // Gets the given choise based on the random number from they choices array
+            let computerSelection = choices[randomChoice];
+            return computerSelection;
+        }
+
+        function playRound(playerSelection, computerSelection) {
             // With these if else block the function decides the winner (from the player POV) based on the input
             if (playerSelection === computerSelection) {
                 alert("It's a tie!");
@@ -33,27 +43,13 @@ buttons.forEach((button) => {
             }
         }
 
-        // This function randomly select a choice for the computer
-        function getComputerChoice (choices) {
-            // Randomly gets a number based on the length of the choices array
-            let randomChoice = Math.floor(Math.random() * choices.length);
-            // Gets the given choise based on the random number from they choices array
-            let computerSelection = choices[randomChoice];
-            return computerSelection;
-        }
-
         let playerScore = 0;
         let computerScore = 0;
         let result;
-        let playerSelection;
-
         // This while loop goes on until one of the scores reaches 5 points
         while (computerScore != 5 && playerScore != 5) {
-            
-            // This is the players selection forced to lowercase
-            playerSelection = prompt("Please enter rock paper or scissors: ").toLowerCase();
-            
-            let computerSelection = getComputerChoice(choices);
+                        
+            const computerSelection = getComputerChoice(choices);
             // Gets the result and based on that assigns a point
             result = playRound(playerSelection, computerSelection);
             if (result === "win") {
@@ -76,4 +72,7 @@ buttons.forEach((button) => {
 
  // Give one point to the winner of the round (increment their score variable)
  // Play rounds until one of them reaches 5 points
+
+// FOr one click play one round and assign a point based on that
+// Prevent clicking if any of the players reach 5 points
  
