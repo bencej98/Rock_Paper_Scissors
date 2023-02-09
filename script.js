@@ -9,11 +9,15 @@ function startGame() {
     let computerScore = 0;
 
     // Creates the div which showcases the current points and final winner
-    const container = document.querySelector("#container");
+    const container = document.querySelector(".container");
     const scores = document.createElement("div");
     const winner = document.createElement("h3");
     scores.classList.add("scores");
     container.appendChild(scores);
+    // Creates the div which showcases the current round's result
+    const roundResult = document.createElement("div");
+    roundResult.classList.add("roundResult");
+    container.appendChild(roundResult);
 
     // Appends click eventlistener for every button
     buttons.forEach((button) => {
@@ -34,7 +38,7 @@ function startGame() {
                 });
 
                 // Adds class to tho the winner element and appends it
-                winner.classList.add("playerWinner");
+                winner.classList.add("winner");
                 winner.textContent = "Congrats you have won the game! :)"
                 container.appendChild(winner);
                 
@@ -44,7 +48,7 @@ function startGame() {
                     button.disabled = true;
                 });
 
-                winner.classList.add("computerWinner");
+                winner.classList.add("winner");
                 winner.textContent = "Unfortunately you have lost the game! :("
                 container.appendChild(winner);
             }
@@ -65,20 +69,20 @@ function startGame() {
 
     // This function plays a round based on the selection of the player and the computer
     function playRound(playerSelection, computerSelection) {
-        // With these if else block the function decides the winner (from the player's POV) based on the input
+        // With these if else blocks the function decides the winner (from the player's POV) based on the input
         if (playerSelection === computerSelection) {
-            alert("It's a tie!");
+            roundResult.textContent = "It's a tie!";
             return "tie";
         } else if  (playerSelection === "Rock" && computerSelection === "Paper" ||
-                    playerSelection === "Paper" && computerSelection === "Rock" ||
+                    playerSelection === "Paper" && computerSelection === "Scissors" ||
                     playerSelection === "Scissors" && computerSelection === "Rock") {
-            alert("You lose!"  + " " + playerSelection + " " + "beats" + " " + computerSelection);
+            roundResult.textContent = "You lose!"  + " " + computerSelection + " " + "beats" + " " + playerSelection;
             return "lose";
         } else if  (playerSelection === "Rock" && computerSelection === "Scissors" || 
                     playerSelection === "Paper" && computerSelection === "Rock" ||
                     playerSelection === "Scissors" && computerSelection === "Paper") {
                         
-            alert("You win!" + " " + playerSelection + " " + "beats" + " " + computerSelection);
+            roundResult.textContent = "You win!" + " " + playerSelection + " " + "beats" + " " + computerSelection;
             return "win";
         }
     }   
