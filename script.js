@@ -73,25 +73,6 @@ function startGame() {
             return "win";
         }
     }
-      
-    if (result === "win") {
-        playerScore++;
-        
-    }
-    else if (result === "lose") {
-        computerScore++;
-        
-    }
-
-    // Displays the result for the player
-    
-    if (playerScore == 5) {
-        alert("You have won the game!Congrats! :)")
-    } else if(computerScore == 5) {
-        alert("Unfortunately you have lost the game! :(")
-    }   
-    
-
 }
 
 startGame();
