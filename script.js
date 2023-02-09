@@ -11,7 +11,6 @@ function startGame() {
 
     let playerScore = 0;
     let computerScore = 0;
-    let result;
 
     // const playerSelection = e.target.className;
     // const computerSelection = getComputerChoice(choices);
@@ -34,6 +33,11 @@ function startGame() {
                 });
                 console.log("foo");
             }
+
+            const container = document.querySelector("#container");
+
+            const scores = document.createElement("div");
+            
             
             
         }); 
