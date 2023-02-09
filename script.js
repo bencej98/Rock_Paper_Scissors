@@ -40,7 +40,7 @@ function startGame() {
             
             scores.classList.add("scores");
 
-            scores.textContent = computersScore, playerScore;
+            scores.textContent = computerScore + " " + playerScore;
 
             container.appendChild(scores);
             
