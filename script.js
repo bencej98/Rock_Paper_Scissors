@@ -38,7 +38,9 @@ function startGame() {
 
             const scores = document.createElement("div");
             
-            
+            scores.classList.add("scores");
+
+            scores.textContent = computersScore, playerScore;
             
         }); 
     });
