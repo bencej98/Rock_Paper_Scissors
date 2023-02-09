@@ -11,3 +11,19 @@ button:enabled {
     cursor: default;
     pointer-events: all;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
