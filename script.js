@@ -41,6 +41,8 @@ function startGame() {
             scores.classList.add("scores");
 
             scores.textContent = computersScore, playerScore;
+
+            container.appendChild(scores);
             
         }); 
     });
