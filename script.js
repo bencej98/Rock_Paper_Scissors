@@ -34,7 +34,7 @@ function startGame() {
                 });
                 console.log("foo");
             }
-            console.log(computerScore, playerScore);
+            
             
         }); 
     });
