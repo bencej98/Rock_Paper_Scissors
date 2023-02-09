@@ -1,6 +1,6 @@
 
-// Create rock paper scissors variables in an array and selects button
-const choices = ["rock", "paper", "scissors"];
+// Create Rock Paper Scissors variables in an array and selects button
+const choices = ["Rock", "Paper", "Scissors"];
 const buttons = document.querySelectorAll('button');
 
 function startGame() {
@@ -69,36 +69,20 @@ function startGame() {
         if (playerSelection === computerSelection) {
             alert("It's a tie!");
             return "tie";
-        } else if (playerSelection === "rock" && computerSelection === "paper") {
-            alert("You lose! Paper beats Rock");
+        } else if  (playerSelection === "Rock" && computerSelection === "Paper" ||
+                    playerSelection === "Paper" && computerSelection === "Rock" ||
+                    playerSelection === "Scissors" && computerSelection === "Rock") {
+            alert("You lose!"  + " " + playerSelection + " " + "beats" + " " + computerSelection);
             return "lose";
-        } else if (playerSelection === "rock" && computerSelection === "scissors") {
-            alert("You win! Rock beats Scissors");
-            return "win";
-        } else if (playerSelection === "paper" && computerSelection === "rock") {
-            alert("You win! Paper beats Rock");
-            return "win";
-        } else if (playerSelection === "paper" && computerSelection === "scissors")  {
-            alert("You lose! Scissors beats Paper")
-            return "lose";
-        } else if(playerSelection === "scissors" && computerSelection === "rock") {
-            alert("You lose! Rock beats Scissors")
-            return "lose";
-        } else if(playerSelection === "scissors" && computerSelection === "paper") {
-            alert("You win! Scissors beats Paper")
+        } else if  (playerSelection === "Rock" && computerSelection === "Scissors" || 
+                    playerSelection === "Paper" && computerSelection === "Rock" ||
+                    playerSelection === "Scissors" && computerSelection === "Paper") {
+                        
+            alert("You win!" + " " + playerSelection + " " + "beats" + " " + computerSelection);
             return "win";
         }
-    }
+    }   
 }
 
 startGame();
 
-
-
-
-
-
-
-
-
- 
