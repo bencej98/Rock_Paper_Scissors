@@ -8,12 +8,13 @@ function startGame() {
     let playerScore = 0;
     let computerScore = 0;
 
-    // Creates the div which showcases the current points
+    // Creates the div which showcases the current points and final winner
     const container = document.querySelector("#container");
     const scores = document.createElement("div");
+    const winner = document.createElement("h3");
     scores.classList.add("scores");
     container.appendChild(scores);
-    
+
     // Appends click eventlistener for every button
     buttons.forEach((button) => {
         // With the help of the class names decides the winner of the round
@@ -26,11 +27,26 @@ function startGame() {
             }
             
             // Disables buttons if any of the players reach 5 points
-            if (playerScore === 5 || computerScore === 5) {
+            if (playerScore === 5) {
+
                 buttons.forEach((button) => {
                     button.disabled = true;
                 });
-                console.log("foo");
+
+                // Adds class to tho the winner element and appends it
+                winner.classList.add("playerWinner");
+                winner.textContent = "Congrats you have won the game! :)"
+                container.appendChild(winner);
+                
+            } else if (computerScore === 5) {
+
+                buttons.forEach((button) => {
+                    button.disabled = true;
+                });
+
+                winner.classList.add("computerWinner");
+                winner.textContent = "Unfortunately you have lost the game! :("
+                container.appendChild(winner);
             }
 
             // Concatenates current points and adds them
@@ -49,7 +65,7 @@ function startGame() {
 
     // This function plays a round based on the selection of the player and the computer
     function playRound(playerSelection, computerSelection) {
-        // With these if else block the function decides the winner (from the player POV) based on the input
+        // With these if else block the function decides the winner (from the player's POV) based on the input
         if (playerSelection === computerSelection) {
             alert("It's a tie!");
             return "tie";
