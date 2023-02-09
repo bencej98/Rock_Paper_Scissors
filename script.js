@@ -3,21 +3,41 @@
 const choices = ["rock", "paper", "scissors"];
 const buttons = document.querySelectorAll('button');
 
-let playerScoreSum = 0;
+let playerScoreSum;
 let computerScoreSum = 0;
 
-function startGame(e) {
+
+function startGame() {
 
     let playerScore = 0;
     let computerScore = 0;
     let result;
 
-    const playerSelection = e.target.className;
-    const computerSelection = getComputerChoice(choices);
+    // const playerSelection = e.target.className;
+    // const computerSelection = getComputerChoice(choices);
     // Gets the result and based on that assigns a point
-    result = playRound(playerSelection, computerSelection);
-    console.log(playerSelection);
-
+    // result = playRound(playerSelection, computerSelection);
+    // console.log(playerSelection);
+    
+    buttons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            let roundResult = playRound(e.target.className, getComputerChoice(choices));
+            if (roundResult === "win") {
+                playerScore++;
+            } else if (roundResult === "lose") {
+                computerScore++;
+            }
+            
+            if (playerScore === 5 || computerScore === 5) {
+                buttons.forEach((button) => {
+                    button.disabled = true;
+                });
+                console.log("foo");
+            }
+            console.log(computerScore, playerScore);
+            
+        }); 
+    });
     // This function randomly select a choice for the computer
     function getComputerChoice (choices) {
         // Randomly gets a number based on the length of the choices array
@@ -35,7 +55,7 @@ function startGame(e) {
             return "tie";
         } else if (playerSelection === "rock" && computerSelection === "paper") {
             alert("You lose! Paper beats Rock");
-            return "loose";
+            return "lose";
         } else if (playerSelection === "rock" && computerSelection === "scissors") {
             alert("You win! Rock beats Scissors");
             return "win";
@@ -44,46 +64,44 @@ function startGame(e) {
             return "win";
         } else if (playerSelection === "paper" && computerSelection === "scissors")  {
             alert("You lose! Scissors beats Paper")
-            return "loose";
+            return "lose";
         } else if(playerSelection === "scissors" && computerSelection === "rock") {
             alert("You lose! Rock beats Scissors")
-            return "loose";
+            return "lose";
         } else if(playerSelection === "scissors" && computerSelection === "paper") {
             alert("You win! Scissors beats Paper")
             return "win";
         }
     }
-              
+      
     if (result === "win") {
         playerScore++;
-        return playerScore;
+        
     }
-    else if (result === "loose") {
+    else if (result === "lose") {
         computerScore++;
-        return computerScore;
+        
     }
 
     // Displays the result for the player
     
     if (playerScore == 5) {
-        //alert("You have won the game!Congrats! :)")
+        alert("You have won the game!Congrats! :)")
     } else if(computerScore == 5) {
-        //alert("Unfortunately you have lost the game! :(")
+        alert("Unfortunately you have lost the game! :(")
     }   
     
 
 }
 
-function checkStandings (point) {
+startGame();
 
-}
 
-// Maybe I should make an other function that check the return value of game and include that in the eventlistener
 
-buttons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-        startGame(e);
-        }); 
-});
+
+
+
+
+
 
  
