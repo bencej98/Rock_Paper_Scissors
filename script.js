@@ -12,6 +12,14 @@ function startGame() {
     let playerScore = 0;
     let computerScore = 0;
 
+    const container = document.querySelector("#container");
+
+    const scores = document.createElement("div");
+    
+    scores.classList.add("scores");
+
+    container.appendChild(scores);
+
     // const playerSelection = e.target.className;
     // const computerSelection = getComputerChoice(choices);
     // Gets the result and based on that assigns a point
@@ -33,16 +41,9 @@ function startGame() {
                 });
                 console.log("foo");
             }
-
-            const container = document.querySelector("#container");
-
-            const scores = document.createElement("div");
             
-            scores.classList.add("scores");
-
             scores.textContent = computerScore + " " + playerScore;
-
-            container.appendChild(scores);
+            //console.log(!!querySelector("#container"));
             
         }); 
     });
