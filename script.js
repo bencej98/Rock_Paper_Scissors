@@ -1,32 +1,22 @@
 
-// Create rock paper scissors variables in an array
+// Create rock paper scissors variables in an array and selects button
 const choices = ["rock", "paper", "scissors"];
 const buttons = document.querySelectorAll('button');
-
-let playerScoreSum;
-let computerScoreSum = 0;
-
 
 function startGame() {
 
     let playerScore = 0;
     let computerScore = 0;
 
+    // Creates the div which showcases the current points
     const container = document.querySelector("#container");
-
     const scores = document.createElement("div");
-    
     scores.classList.add("scores");
-
     container.appendChild(scores);
-
-    // const playerSelection = e.target.className;
-    // const computerSelection = getComputerChoice(choices);
-    // Gets the result and based on that assigns a point
-    // result = playRound(playerSelection, computerSelection);
-    // console.log(playerSelection);
     
+    // Appends click eventlistener for every button
     buttons.forEach((button) => {
+        // With the help of the class names decides the winner of the round
         button.addEventListener("click", (e) => {
             let roundResult = playRound(e.target.className, getComputerChoice(choices));
             if (roundResult === "win") {
@@ -35,15 +25,16 @@ function startGame() {
                 computerScore++;
             }
             
+            // Disables buttons if any of the players reach 5 points
             if (playerScore === 5 || computerScore === 5) {
                 buttons.forEach((button) => {
                     button.disabled = true;
                 });
                 console.log("foo");
             }
-            
+
+            // Concatenates current points and adds them
             scores.textContent = computerScore + " " + playerScore;
-            //console.log(!!querySelector("#container"));
             
         }); 
     });
