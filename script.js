@@ -1,7 +1,8 @@
 
 // Create Rock Paper Scissors variables in an array and selects button
 const choices = ["Rock", "Paper", "Scissors"];
-const buttons = document.querySelectorAll('button');
+const buttonElements = document.querySelectorAll("#Rock, #Paper, #Scissors");
+const playButtons = Array.from(buttonElements);
 
 function startGame() {
 
@@ -20,10 +21,11 @@ function startGame() {
     container.appendChild(roundResult);
 
     // Appends click eventlistener for every button
-    buttons.forEach((button) => {
+    playButtons.forEach((button) => {
         // With the help of the class names decides the winner of the round
         button.addEventListener("click", (e) => {
-            let roundResult = playRound(e.target.className, getComputerChoice(choices));
+            console.log(e.target.id)
+            let roundResult = playRound(e.target.id, getComputerChoice(choices));
             if (roundResult === "win") {
                 playerScore++;
             } else if (roundResult === "lose") {
@@ -33,7 +35,7 @@ function startGame() {
             // Disables buttons if any of the players reach 5 points
             if (playerScore === 5) {
 
-                buttons.forEach((button) => {
+                playButtons.forEach((button) => {
                     button.disabled = true;
                 });
 
@@ -44,7 +46,7 @@ function startGame() {
                 
             } else if (computerScore === 5) {
 
-                buttons.forEach((button) => {
+                playButtons.forEach((button) => {
                     button.disabled = true;
                 });
 
