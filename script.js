@@ -2,7 +2,12 @@
 // Create Rock Paper Scissors variables in an array and selects button
 const choices = ["Rock", "Paper", "Scissors"];
 const buttonElements = document.querySelectorAll("#Rock, #Paper, #Scissors");
+// Creates an array from the HTML Elements that got returned
 const playButtons = Array.from(buttonElements);
+
+
+const refreshButton = document.getElementById("refresh");
+console.log(refreshButton);
 
 function startGame() {
 
@@ -68,6 +73,11 @@ function startGame() {
         let computerSelection = choices[randomChoice];
         return computerSelection;
     }
+
+    // Reloads the page upon click on "Play again" button
+    refreshButton.addEventListener("click", () => {
+        window.location.reload();
+    });
 
     // This function plays a round based on the selection of the player and the computer
     function playRound(playerSelection, computerSelection) {
