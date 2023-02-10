@@ -7,7 +7,6 @@ const playButtons = Array.from(buttonElements);
 
 
 const refreshButton = document.getElementById("refresh");
-console.log(refreshButton);
 
 function startGame() {
 
@@ -29,7 +28,6 @@ function startGame() {
     playButtons.forEach((button) => {
         // With the help of the class names decides the winner of the round
         button.addEventListener("click", (e) => {
-            console.log(e.target.id)
             let roundResult = playRound(e.target.id, getComputerChoice(choices));
             if (roundResult === "win") {
                 playerScore++;
