@@ -1,7 +1,21 @@
 button {
     background-color: #56a291;
     color: white;
+    width: 120px;
+    height: 30px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 0;
 }
+
+button:hover {
+    background-color: white;
+    color: #56a291;
+}
+
 button:disabled {
     cursor: default;
     pointer-events: none;
