@@ -18,7 +18,7 @@ body {
     height: 8vw;
     font-weight: 900;
     font-size: 40px;
-    top: 0;
+    position: fixed;
 }
 button {
     background-color: #56a291;
