@@ -1,5 +1,6 @@
 button {
-
+    background-color: #56a291;
+    color: white;
 }
 button:disabled {
     cursor: default;
