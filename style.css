@@ -58,3 +58,8 @@ button:enabled {
     gap: 30px;
 
 }
+
+.buttons {
+    display: flex;
+    gap: 100px;
+}
