@@ -8,6 +8,22 @@ body {
     margin: 0;
 }
 
+h1 {
+    background-color: white;
+    color: #2e2947;
+
+}
+
+.flex-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+
+}
+
 .header {
     display: flex;
     justify-content: center;
@@ -19,6 +35,12 @@ body {
     font-weight: 900;
     font-size: 40px;
     position: fixed;
+}
+
+.score-descriptions {
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
 }
 button {
     background-color: #56a291;
@@ -63,3 +85,4 @@ button:enabled {
     display: flex;
     gap: 100px;
 }
+
