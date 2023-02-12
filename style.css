@@ -42,7 +42,10 @@ h1 {
     gap: 30px;
     font-size: 20px;
 }
-
+.scores {
+    display: flex;
+    flex-direction: row;
+}
 .playerScore, .computerScore {
 
     display: flex;
