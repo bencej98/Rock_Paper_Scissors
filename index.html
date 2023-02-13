@@ -1,43 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <div class="flex-container">
-
-        <h1>Rock Paper Scissors Game</h1>
-        <h2>First to reach 5 points wins!</h2>
-        <div class="buttons">
-            <button id="Rock">Rock</button>
-            <button id="Paper">Paper</button>
-            <button id="Scissors">Scissors</button>
-        </div>
-        <div class="score-descriptions">
-            <span>Player Score</span>
-            <span>Computer Score</span>    
-        </div>
-        <div class="scores">
-            <div class="playerScore"></div>
-            <div class="computerScore"></div>
-        </div>
-        <div>
-            <span class="results">
-                Results
-            </span>
-        </div>
-        <div class="roundResult">
-            
-        </div>
-        <div>
-            <button id="refresh">Play Again</button>
-        </div>
-            
+  </head>
+  
+  <body>
+    <div class="flex">
+      <h1>Rock Paper Scissors</h1>
+      <h3>First To 5 Wins!</h3>
+  
+     
+      <div class="optionBtn">
+        <button id="Rock">Rock</button>
+        <button id="Paper">Paper</button>
+        <button id="Scissors">Scissors</button>
+      </div>
+  
+      <div class="labels">
+        <span id="playerLabel">Player scores</span>
+        <span id="compLabel">Computer scores</span>
+      </div>
+      
+  
+      <div class="scores">
+        <div id="playerScoreDisplay"></div>
+        <div id="computerScoreDisplay"></div>
+      </div>
+  
+    <div><span id="resultsLabel">Results</span></div>
+      
+  
+      <div id="roundResult"></div>
+  
+    <div>
+      <button id="refresh">Play Again!</button>
     </div>
-</body>
-</html>
+     
+    </div>
+  
+  
+  </body>
+  </html>
