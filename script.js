@@ -4,9 +4,11 @@ const choices = ["Rock", "Paper", "Scissors"];
 const buttonElements = document.querySelectorAll("#Rock, #Paper, #Scissors");
 // Creates an array from the HTML Elements that got returned
 const playButtons = Array.from(buttonElements);
+console.log(playButtons);
 
 
 const refreshButton = document.getElementById("refresh");
+console.log(refreshButton);
 
 function startGame() {
 
@@ -14,6 +16,7 @@ function startGame() {
     let computerScore = 0;
 
     // Creates the div which showcases the current points and final winner
+    /*
     const container = document.querySelector(".container");
     const scores = document.createElement("div");
     const winner = document.createElement("h3");
@@ -23,6 +26,11 @@ function startGame() {
     const roundResult = document.createElement("div");
     roundResult.classList.add("roundResult");
     container.appendChild(roundResult);
+    */
+    const playerScoreDisplay = document.getElementById("playerScoreDisplay")
+    const computerScoreDisplay = document.getElementById("computerScoreDisplay")
+    console.log(computerScoreDisplay, playerScoreDisplay)
+    const roundResultDisplay = document.getElementById("roundResult")
 
     // Appends click eventlistener for every button
     playButtons.forEach((button) => {
@@ -43,9 +51,9 @@ function startGame() {
                 });
 
                 // Adds class to tho the winner element and appends it
-                winner.classList.add("winner");
-                winner.textContent = "Congrats you have won the game! :)"
-                container.appendChild(winner);
+                // winner.classList.add("winner");
+                roundResultDisplay.textContent = "Congrats you have won the game! :)";
+                // container.appendChild(winner);
                 
             } else if (computerScore === 5) {
 
@@ -53,13 +61,13 @@ function startGame() {
                     button.disabled = true;
                 });
 
-                winner.classList.add("winner");
-                winner.textContent = "Unfortunately you have lost the game! :("
-                container.appendChild(winner);
+                roundResultDisplay.textContent = "Unfortunately you have lost the game! :(";
             }
 
-            // Concatenates current points and adds them
-            scores.textContent = computerScore + " " + playerScore;
+            // Adds current point to appropriate div
+            playerScoreDisplay.textContent =  playerScore;
+            computerScoreDisplay.textContent = computerScore;
+
             
         }); 
     });
@@ -81,18 +89,18 @@ function startGame() {
     function playRound(playerSelection, computerSelection) {
         // With these if else blocks the function decides the winner (from the player's POV) based on the input
         if (playerSelection === computerSelection) {
-            roundResult.textContent = "It's a tie!";
+            roundResultDisplay.textContent = "It's a tie!";
             return "tie";
         } else if  (playerSelection === "Rock" && computerSelection === "Paper" ||
                     playerSelection === "Paper" && computerSelection === "Scissors" ||
                     playerSelection === "Scissors" && computerSelection === "Rock") {
-            roundResult.textContent = "You lose!"  + " " + computerSelection + " " + "beats" + " " + playerSelection;
+            roundResultDisplay.textContent = "You lose!"  + " " + computerSelection + " " + "beats" + " " + playerSelection;
             return "lose";
         } else if  (playerSelection === "Rock" && computerSelection === "Scissors" || 
                     playerSelection === "Paper" && computerSelection === "Rock" ||
                     playerSelection === "Scissors" && computerSelection === "Paper") {
                         
-            roundResult.textContent = "You win!" + " " + playerSelection + " " + "beats" + " " + computerSelection;
+            roundResultDisplay.textContent = "You win!" + " " + playerSelection + " " + "beats" + " " + computerSelection;
             return "win";
         }
     }   
