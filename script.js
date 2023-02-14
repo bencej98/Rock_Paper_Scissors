@@ -94,13 +94,15 @@ function startGame() {
         } else if  (playerSelection === "Rock" && computerSelection === "Paper" ||
                     playerSelection === "Paper" && computerSelection === "Scissors" ||
                     playerSelection === "Scissors" && computerSelection === "Rock") {
-            roundResultDisplay.textContent = "You lose!"  + " " + computerSelection + " " + "beats" + " " + playerSelection;
+            roundResultDisplay.textContent = "You lose! " + "Computer choose " + " " + computerSelection +
+             " " + "and "+ computerSelection + " " + "beats" + " " + playerSelection;
             return "lose";
         } else if  (playerSelection === "Rock" && computerSelection === "Scissors" || 
                     playerSelection === "Paper" && computerSelection === "Rock" ||
                     playerSelection === "Scissors" && computerSelection === "Paper") {
                         
-            roundResultDisplay.textContent = "You win!" + " " + playerSelection + " " + "beats" + " " + computerSelection;
+            roundResultDisplay.textContent = "You win! " + "Computer choose " + computerSelection + " and " +
+             playerSelection + " " + "beats" + " " + computerSelection;
             return "win";
         }
     }   
